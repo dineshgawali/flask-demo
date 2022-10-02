@@ -1,5 +1,6 @@
-Installatoin: 
-    virtulenv: 
+Installatoin:
+
+    virtulenv
         install, create and activate virtulenv
         $ pip install virtualenv
         $ virtualenv -p python3 venv
@@ -23,27 +24,36 @@ test project using curl on other terminal
 API: 
 
 1. Login: 
+
     Request:
-        curl -X POST -F 'username=dinesh1' http://127.0.0.1:8080/restapi/login/
+        
+        $ curl -X POST -F 'username=dinesh1' http://127.0.0.1:8080/restapi/login/
     Response:
+    
         {
         "token": "c43e5883-6d99-49f1-abcb-8c78e4da2f69"
         }        
 
 
 2. cwd: 
+
     Request:
-        curl -H 'Authorization: Bearer c43e5883-6d99-49f1-abcb-8c78e4da2f69' localhost:8080/restapi/cwd/
+    
+        $ curl -H 'Authorization: Bearer c43e5883-6d99-49f1-abcb-8c78e4da2f69' localhost:8080/restapi/cwd/
     Response:
+    
         {
         "cwd": "/home/dinesh/dinesh/flask"
         }
 
 
 3. ls: 
+
     Request:
-        curl -H 'Authorization: Bearer c43e5883-6d99-49f1-abcb-8c78e4da2f69' localhost:8080/restapi/ls/
+    
+        $ curl -H 'Authorization: Bearer c43e5883-6d99-49f1-abcb-8c78e4da2f69' localhost:8080/restapi/ls/
     Response:
+    
         {
             "ls": [
                 {
@@ -63,23 +73,32 @@ API:
 
 
 4. cd: 
+
     Request:
-        curl -H 'Authorization: Bearer c43e5883-6d99-49f1-abcb-8c78e4da2f69' http://127.0.0.1:8080/restapi/cd/?directory=\/home\/dinesh/\dinesh\/
+    
+        $ curl -H 'Authorization: Bearer c43e5883-6d99-49f1-abcb-8c78e4da2f69' http://127.0.0.1:8080/restapi/cd/?directory=\/home\/dinesh/\dinesh\/
+    
     Success Response:
-        {
+    
+    {
             "message": "Directory Changed"
         }
     
     Error Response:
+    
         {
             "message": "Changed directory is not exists"
         }
 
 
-5. Logout: 
+5. Logout:
+
     Request:
-        curl -H 'Authorization: Bearer c43e5883-6d99-49f1-abcb-8c78e4da2f69' http://127.0.0.1:8080/restapi/logout/
+
+        $ curl -H 'Authorization: Bearer c43e5883-6d99-49f1-abcb-8c78e4da2f69' http://127.0.0.1:8080/restapi/logout/
+    
     Response:
+        
         {
             "message": "User Logout"
         }       
